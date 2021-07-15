@@ -3,6 +3,7 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+@media (prefers-color-scheme: dark),(prefers-color-scheme: light) {
 
 html, body {
   width: 100%;
@@ -1495,3 +1496,5 @@ img::-moz-selection {
       min-height: 350px;
     }
   }
+
+}
