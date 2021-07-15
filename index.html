@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Himgiri Global Meditation Center</title>
+
+    <!-- Bootstrap Core CSS -->
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <link
+        href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+        rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+
+    <link rel="stylesheet" href="css/animate.css" type="text/css">
+    <link rel="stylesheet" href="css/flexslider.css">
+
+    <!-- Custom CSS -->
+
+    <link rel="stylesheet" href="css/custom_styles.css" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <!-- Start  -->
+    <style>
+        div.jkcubeslideshow {
+            /* main container */
+            background: white;
+            display: block;
+            width: 300px;
+            /* default width of main container */
+            height: 375px;
+            /* default height of main container */
+            position: relative;
+            -webkit-perspective: 1000px;
+            /* Greater the value, less pronounced the 3D effect */
+            perspective: 1000px;
+            /* Greater the value, less pronounced the 3D effect */
+            ;
+        }
+
+        div.side1,
+        div.side2 {
+            /* two panels that make up cube effect */
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            backface-visibility: hidden;
+            /* hide backface of DIVs */
+            transition: all 1s ease-in-out;
+            /* CSS transition. Actual duration set by script */
+            ;
+        }
+
+        div.side1 img,
+        div.side2 img {
+            /* how should slideshow images be sized inside panels? */
+            width: 100%;
+            height: auto;
+        }
+    </style>
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="js/jkcubeslideshow.js">
+
+        /* =====================================
+         ** 3D Cube Slideshow- by JavaScript Kit (www.javascriptkit.com)
+         ** Visit JavaScript Kit at http://www.javascriptkit.com/ for full source code
+        ===================================== */
+
+    </script>
+
+    <script>
+
+        var cubeshowvar1 // arbitrary but unique variable to store slideshow instance
+
+        jQuery(function ($) {
+            cubeshowvar1 = new jkcubeslideshow({
+                id: 'cubeshow1',
+                dimensions: [300, 375],
+                images: [
+                    ['images/seva1.webp'],
+                    ['images/seva2.webp'],
+                    ['images/seva3.webp'],
+                    ['images/seva4.webp'],
+                    ['images/seva5.webp'],
+                    ['images/seva6.webp'],
+                    ['images/seva7.webp'] //<-- no comma after last image
+                ] //<-- no comma after last setting
+            })
+        })
+
+    </script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyChsQljjSzSVlr7R_3yTPp3NZdFQ_WMSDE",
+            authDomain: "bootstrap-website-d98e1.firebaseapp.com",
+            databaseURL: "https://bootstrap-website-d98e1-default-rtdb.firebaseio.com",
+            projectId: "bootstrap-website-d98e1",
+            storageBucket: "bootstrap-website-d98e1.appspot.com",
+            messagingSenderId: "1098178953064",
+            appId: "1:1098178953064:web:ddb03336911253836b20dd",
+            measurementId: "G-G7HB46QXV9"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+
+    <!--  END  -->
+
+</head>
+
+
+
+<body id="page-top">
+    <!-- Loader -->
+    <div id="loading">
+        Loading...
+    </div>
+    <!-- Loader -->
+
+
+    <!-- PopUp -->
+    <div class="container">
+        <div class="modal fade" id="onLoadPopUp" role="dialog">
+            <div id="onLoadPopUp"></div>
+        </div>
+    </div>
+    <!-- PopUp -->
+    <header id="header" class="header headerContainer">
+        <div class="container">
+            <!-- Trigger the modal with a button -->
+            <button type="button" class="btn btn-info joinUsBtn" data-toggle="modal" data-target="#joinUsform">Join
+                Us</button>
+            <!-- Modal -->
+            <div class="modal fade" id="joinUsform" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h5 class="modal-title">Join our centre and allow us to help you, to Live a Better Life</h5>
+                        </div>
+                        <div class="modal-body">
+                            <br />
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="homeTown">Country and City</label>
+                                <input type="text" class="form-control" id="homeTown" placeholder="Country and City">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phn">Whatsapp Number</label>
+                                <input type="number" class="form-control" id="phn" placeholder="Whatsapp Number">
+                            </div>
+                            <button type="submit" id="join_submit" class="btn submitBtn btn-lg"
+                                data-dismiss="modal">Submit</button>
+                            <button type="button" class="btn submitBtn btn-lg" data-dismiss="modal"> Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+            <!--//logo-->
+
+            <nav id="main-nav" class="main-nav " role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <a class="logoMob pull-left" href="#">
+                        <img src="images\HimgiriLogoSmall.webp" alt="">
+                    </a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <span class="collapseMenuText">MENU</span>
+                    <a class="" href="#page-top"></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+
+                <div class="collapse navbar-collapse NavBarPosition" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active nav-item" id="homeNav">
+                            <a class="page-scroll" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item" id="aboutNav">
+                            <a class="page-scroll" href="#about">About Us</a>
+                        </li>
+                        <li class="nav-item" id="visionNav">
+                            <a class="page-scroll" href="#vision">Vision</a>
+                        </li>
+                        <li class="nav-item" id="meditationNav">
+                            <a class="page-scroll" href="#meditation">Meditation</a>
+                        </li>
+                        <li class="nav-item" id="mentorNav">
+                            <a class="page-scroll" href="#ourmentor">Mentor</a>
+                        </li>
+                    </ul>
+
+                    <div class="forMobile forDesktop">
+                        <a class="logo pull-left notForMob" href="#">
+                            <img class="logo" src="images\HimgiriLogoSmall.webp" alt="">
+                        </a>
+                    </div>
+
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item" id="sevaNav">
+                            <a class="page-scroll" href="#seva">Seva</a>
+                        </li>
+
+                        <li class="nav-item" id="eventsNav">
+                            <a class="page-scroll" href="#events">Events</a>
+                        </li>
+                        <li class="nav-item" id="galleryNav">
+                            <a class="page-scroll" href="#gallery">Gallery</a>
+                        </li>
+                        <li class="nav-item" id="experiencesNav">
+                            <a class="page-scroll" href="#experiences">Experiences</a>
+                        </li>
+                        <li class="nav-item" id="contactusNav">
+                            <a class="page-scroll" href="#contactus">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+        </div>
+
+        <!-- /.container-fluid -->
+
+    </header>
+
+    <!-- ******PROMO****** -->
+    <div id="home">
+        <section id="promo" class="promo section">
+            <!--//intro-->
+            <div class="bg-slider-wrapper container">
+                <div id="bg-slider" class="flexslider bg-slider">
+                    <ul class="slides">
+                        <li class="slide slide-1">
+                            <div class="carousel-caption">
+                                <!-- <p class="animated bounceInRight sliderText-1" >Soak in the ocean of Divine Love...</p>                        -->
+                            </div>
+                        </li>
+                        <li class="slide slide-2">
+                            <div class="carousel-caption">
+                                <p class="animated zoomIn sliderText-2">Rediscover yourself!</p>
+                            </div>
+                        </li>
+                        <li class="slide slide-3">
+                            <div class="carousel-caption">
+                                <p class="animated zoomIn sliderText-3">Meditation is the way of Life..</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--//bg-slider-wrapper-->
+        </section>
+        <!--//promo-->
+
+        <!-- myTabs Section -->
+        <div class="marqueeWrap">
+            <marquee behavior="scroll" direction="right">
+                <span class="scrollingTxt" id="marqueeText"></span>
+            </marquee>
+        </div>
+        <div class="myTabs bgYellow">
+            <div class="container text-center">
+                <div class="row ">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#shradha" id="shradha-tab" role="tab"
+                                data-toggle="tab" aria-controls="shradha" aria-expanded="true">SHRADHA</a></li>
+                        <li role="presentation" class=""><a href="#sevaTab" role="tab" id="seva-tab" data-toggle="tab"
+                                aria-controls="seva" aria-expanded="false">SEVA</a></li>
+                        <li role="presentation" class=""><a href="#saburi" role="tab" id="saburi-tab" data-toggle="tab"
+                                aria-controls="saburi" aria-expanded="false">SABURI</a></li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="shradha" aria-labelledby="shradha-tab">
+                            <br>
+                            <img src=images/shradha.png class="imgMobile"><br />
+                            <p>An individual's Belief in the Divine's existence, wisdom, power, love and grace.
+                                Faith in God should be like the one year old baby, when you throw him in the air, "he
+                                laughs", because he knows you will not let him fall.</p>
+                            <br>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="sevaTab" aria-labelledby="seva-tab">
+                            <br>
+                            <img src=images/seva.png class="imgMobile"><br />
+                            <p>Selfless service that is performed without any expectation of result or award, with the pure
+                                intention to serve humanity is "seva" in its true form.
+                                "Serving God's Children is serving God"</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="saburi" aria-labelledby="saburi-tab">
+                            <br>
+                            <img src=images/saburi.png class="imgMobile"><br />
+                            <p>Patience is not the ability to wait, but the quality of having a positive attitude while
+                                waiting.
+                                It is the wisdom of letting the things happen on the right time.
+                            </p>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- myTabs Section -->
+
+    <section class="bg-primary bgGreen" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <!-- <h2 class="section-heading">Our Meditation Center</h2>-->
+                    <img src=images/meditationB2.png class="imgMobile"><br>
+                    <img class="text-center sectionHeadBorder" src="images/sectionNameBorder.png" alt="">
+                    <p class="intro text-center">Himgiri Global Meditation Center </p>
+
+                    <img class=" text-center imgMobile imgBorder" src="images/A1MeditationCenter.webp"
+                        alt="Our Meditation Center"><br><br>
+
+                    <p>"Himgiri Global Meditation Centre" is a Non Profit Spiritual Organization.
+
+                    <p>In today's world where stress frustrations, depression and emotional dis balance is on a rise, it
+                        has become very necessary for all of us to practice Meditation. Considering this "Himgiri Global Meditation Centre" was formed, with the sole intention to Serve Humanity, by promoting meditation and well being. Our center  helps individuals to live a Better Life although being a part of   today's challenging world. Our center is a
+                        blend of Nature and Modern Conceptulization, such that we are well rooted with mother nature.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Vision Section -->
+
+    
+    <section class="bg-primary bgPink" id="vision">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <!-- <h2 class="section-heading">Our Vision</h2>-->
+                    <img src=images/ourvisionB1.png class="imgMobile"><br>
+
+                    <img class="text-center sectionHeadBorder" src="images/sectionNameBorder.png" alt="">
+                    <p class="text-center">We have a vision, where every person is helping each other and this will help
+                        us transform this world into a better place to live in, by this we are also serving our nation
+                        by creating well being among people.</p>
+
+                    <img class=" text-center imgMobile imgBorder" src="images/A1Hands.webp"
+                        alt="Helping Each Other"><br><br>
+
+                    <p>All this is done under the <b>Divine Guidance of Naveen Ji</b>.</p>
+
+                    <p>Every person who comes in touch with him surely says, "We are Blessed to have him in our lives".
+                        He has transformed thousands of lives and he keeps inspiring us towards becoming a better human.
+                    </p>
+
+                    <p>People who are attached with us have found a true purpose in their lives and found Noticible
+                        Positive changes in their life's towards Happy and Healthy living.</p>
+
+                    <img class=" text-center imgMobile imgBorder" src="images/A1spreadPositivity.webp"
+                        alt="Spreading Positivity"><br><br>
+
+                    <p>If you wish to help us in Spreading Positivity and Serving Humanity in the true form then you are
+                        welcome to become a part of Himgiri Global Meditation Centre (Our Guru Sthan).</p>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Moto Section -->
+
+    <section class="bg-light bgBlue" id="moto">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <img src=images/ourmotoB1.png class="imgMobile"><br>
+                    <img class="text-center sectionHeadBorder" src="images/sectionNameBorder.png" alt="">
+                    <!-- Service image -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                        <img class=" text-center imgMobile imgBorder" src="images/A1Soul.webp"
+                            alt="Soul Realization"><br><br>
+                    </div>
+                    <!-- Service content -->
+                    <div class="col-md-12 col-sm-12 col-xs-12 text-left">
+                        <p>Our moto is that no matter which Religion, God or Guru you believe in, continue believing in
+                            the same, we will help you in soul realization.</p>
+                    </div>
+                </div>
+            </div>
+            <!--div class row" ends-->
+        </div>
+    </section>
+
+
+    <section class="bg-primary bgYellow" id="meditation">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <img src=images/meditationB1.png class="imgMobile"><br>
+                    <img class="text-center sectionHeadBorder" src="images/sectionNameBorder.png" alt=""><br>
+
+                    <img class=" text-center imgMobile imgBorder" src="images/MeditationBudha.webp"
+                        alt="Our Meditation Center"><br><br>
+
+                    <p>
+                        Meditation is a combination of Breathing Techniques, Mindfullness & Concentration, with which
+                        one can experience Deep Relaxation of the Body & the Mind and this De-Stresses a person within
+                        no time, this helps a person to live a Healthy, Peaceful and a Happy Life.
+                    </p>
+                    <p>With Meditation one can also know the true purpose of Human Birth and know the Real Self (that is
+                        Soul Realization) and can also experience the union with the Universal / God Conciousness.
+                    </p>
+
+                    <img class=" text-center imgMobile imgBorder" src="images/meditation9.webp"
+                        alt="Our Meditation Center">
+                    <br><br>
+
+                    <p><u>Following are the Benefits of Meditation:</u></p>
+                    <p><b><u>Emotional Benefits:</u></b> Meditation reduces Anxiety, Depression, Negative Emotions,
+                        Stress, Frustrations, Anger, Emotional Pain and helps to Release our Supressed Feelings, also
+                        meditation Calms our Mind and Rejuvenates our entire Emotinal Being which leads towards Living a
+                        Balanced Life.<br></p>
+
+                    <p><b><u>Medical Benefits:</u></b> Meditation helps in controlling Blood Pressure, Memory Loss,
+                        helps to Fight Addictions, Controling Pain, Improves Sleep Quality, Lower your Risk of Heart
+                        Diseases and can help in curing Stomach & Muscular Disorders.</p>
+                    <p>Researchers have found that long-term meditators have more disease-fighting chemicals in their
+                        body, and they remain more Healthy.<br></p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-primary bgPink" id="ourmentor">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <img src=images/mentorB1.png class="imgMobile"><br>
+
+                    <img class="text-center sectionHeadBorder" src="images/sectionNameBorder.png" alt=""
+                        class="img-responsive">
+
+                    <br>
+                    <div>
+                        <img class=" text-center imgMobile imgBorder" src="images/A1God2.webp"
+                            alt="Supreme Conciousness">
+                        <br><br>
+                    </div>
+
+                    <p>This is the Supreme Conciousness in its True Form of Light which is full of Love and Happiness.
+                    </p>
+                    <p>Some call this light as God, Param Pita Parmatma, Allah ka Noor, Bhagwan, Bude Baba, Ishwar, Guru
+                        Tatva, etc</p>
+                    <p>When we experience this light which is full of Love, we can also hear the sound of Aum, therefore
+                        God is also called as Aumkar-eshwara. This is the Guru Tatva which takes the form of different
+                        Instruments and comes in our life as our Mentor - Guide - Guru.</p>
+                    <p>Like a Gardner utilises the instruments and makes a beautiful Garden full of Flowers, similarly
+                        this Guru Tatva makes a beautiful being out of us through various Mentors - Guides - Guru's,
+                        also called as the Guru Mandala (Group of Guides).</p>
+
+                    <br>
+                    <p><b>Following are the Mentors - Guides - Guru that "Himgiri Global Meditation Center" is blessed
+                            with:</b></p>
+                    <div class="col-lg-2 col-md-2 col-xs-0"></div>
+                    <div class="col-lg-4 col-md-4 col-xs-12">
+                        <div><img class="gurujiPhoto" src="images\gurujidada.webp" alt="dada Guruji"></div>
+                        <div><b>Dada Guruji</b></div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xs-12">
+                        <div><img class="gurujiPhoto" src="images\gurujibade.webp" alt="Bade Guruji"></div>
+                        <div><b>Bade Guruji</b></div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-xs-0"></div>
+                    <br>
+                    <div class="col-lg-12 text-center">
+                        <br />
+                        <p>What ever Himgiri Global Meditation Center is today, is all with the Blessings of Guruji.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="bg-primary bgGreen" id="seva">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <img src=images/sevaB1.png><br>
+
+                    <img class="text-center sectionHeadBorder" src="images/sectionNameBorder.png" alt="">
+                    <div>
+                        <p>We have a very Pure Intention to Serve Humanity therefore from the past 15 years we are
+                            helping humanity with the following social events:
+                        <div class="row benefits text-center" id="sevaCards">
+                        </div>
+                        </p>
+
+                        <p><b>All these above mentioned seva activities are done without any charge, as our intention is
+                                just to help people live a Better Life and help them in doing Spiritual
+                                Progress.</b><br><br></p>
+
+                        <p><b>We Believe that the best way to serve God is to serve God's children, therefore following
+                                are the social services we actively participate into:</b><br><br></p>
+
+                        <!-- START -->
+                        <center>
+                            <div class="jkcubeslideshow" id="cubeshow1">
+
+                            </div>
+                            <br><br>
+                            <a href="#" onClick="cubeshowvar1.rotatecube('back'); return false"> <img
+                                    src="images/blueleft.gif" style="border:none" /> </a> <a href="#"
+                                onClick="cubeshowvar1.rotatecube('forward'); return false" style="margin-left:160px">
+                                <img src="images/blueright.gif" style="border:none" /></a>
+                        </center>
+                        <!-- END  -->
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-primary bgYellow" id="events">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <img src=images/eventsB1.png class="imgMobile"><br>
+                    <img class="text-center sectionHeadBorder" src="images/sectionNameBorder.png" alt="">
+
+                    <div id="eventText">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bgGreen" id="gallery">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <img src=images/galleryB1.png class="imgMobile"><br>
+                    <img class="text-center sectionHeadBorder" src="images/sectionNameBorder.png" alt=""
+                        class="img-responsive">
+                    <div class="container text-center">
+                        <div class="row ">
+                            <!-- 3D Slideshow Section -->
+                            <section id="slideshow">
+                                <div class="entire-content">
+                                    <div class="content-carrousel">
+                                        <figure class="shadow"><img
+                                                src="https://images.pexels.com/photos/758733/pexels-photo-758733.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+                                        </figure>
+                                        <figure class="shadow"><img
+                                                src="https://images.pexels.com/photos/21261/pexels-photo.jpg?w=940&h=650&auto=compress&cs=tinysrgb" />
+                                        </figure>
+                                        <figure class="shadow"><img
+                                                src="https://images.pexels.com/photos/567973/pexels-photo-567973.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+                                        </figure>
+                                        <figure class="shadow"><img
+                                                src="https://images.pexels.com/photos/776653/pexels-photo-776653.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+                                        </figure>
+                                        <figure class="shadow"><img
+                                                src="https://images.pexels.com/photos/54630/japanese-cherry-trees-flowers-spring-japanese-flowering-cherry-54630.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+                                        </figure>
+                                        <figure class="shadow"><img
+                                                src="https://images.pexels.com/photos/131046/pexels-photo-131046.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+                                        </figure>
+                                        <figure class="shadow"><img
+                                                src="https://images.pexels.com/photos/302515/pexels-photo-302515.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+                                        </figure>
+                                        <figure class="shadow"><img
+                                                src="https://images.pexels.com/photos/301682/pexels-photo-301682.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+                                        </figure>
+                                        <figure class="shadow"><img
+                                                src="https://images.pexels.com/photos/933054/pexels-photo-933054.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" />
+                                        </figure>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <section class="bg-primary bglightBrown " id="experiences">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <img src=images/spexpB1.png class="imgMobile"><br>
+                    <img class="text-center sectionHeadBorder" src="images/sectionNameBorder.png" alt="">
+                    <br><br>
+
+
+
+                    <!--  START OF EXPERIENCE CODE   -->
+                    <form>
+                        <div class="col-lg-6 col-md-6 col-xs-12 experienceForm">
+                            <center><p>We would love to hear from you</p></center>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" name="name" id="name1" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="experience">Experience</label>
+                                <textarea rows="5" class="form-control" name="experience" id="experience"
+                                    placeholder="Write your experience here."></textarea>
+                            </div>
+                            <button type="submit" id="submit" class="btn submitBtn btn-lg"
+                                data-dismiss="modal">Submit</button>
+                        </div>
+                    </form>
+                    <div class="col-lg-1 col-md-1 col-xs-0"></div>
+                    <div class="col-lg-5 col-md-5 col-xs-12">
+                        <br><br>
+                        <div id="experienceCarousel" class="carousel slide" data-interval="false" data-ride="carousel">
+                            <div class="carousel-inner" id="spiritualExperience">
+                            </div>
+                            <a class="carousel-control left" href="#experienceCarousel" data-slide="prev">
+                                <svg xmlns='http://www.w3.org/2000/svg' fill='#f96c05' height="25px" width="25px"
+                                    viewBox='0 0 8 8'>
+                                    <path d='M4 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z' />
+                                </svg>
+
+                            </a>
+                            <a class="carousel-control right" href="#experienceCarousel" data-slide="next">
+                                <svg xmlns='http://www.w3.org/2000/svg' fill='#f96c05' height="25px" width="25px"
+                                    viewBox='0 0 8 8'>
+                                    <path d='M1.5 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z' />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <script src="js/firebaseUpload.js"></script>
+                    <!--  END OF EXPERIENCE CODE -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Us Section -->
+
+    <section class="bg-primary bgPink" id="contactus">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <img src=images/touchB1.png class="imgMobile"><br>
+                    <img class="text-center sectionHeadBorder" src="images/sectionNameBorder.png" alt="">
+                    <div>
+                        <div class="item col-md-6 col-xs-12">
+                            <i class="fa fa-5x fa-envelope-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                            <p class="text-center"> To reach to us please mail at:<br>
+                                <a href="mailto:lorem@loremipsum.com"> lorem@loremipsum.com</a>
+                            </p>
+                        </div>
+
+                        <div class="item col-md-6 col-xs-12">
+                            <i class="fa fa-5x fa-map-marker wow bounceIn text-primary" data-wow-delay=".2s"></i>
+                            <address>
+                                <strong>Himgiri Global Meditation Center</strong><br>
+                                Lorem Ipsum <br>
+                                Lorem, Ipsun 411001
+                            </address>
+                        </div>
+                    </div>
+                    <!--/div address-->
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+
+                    <span>
+                        <a href="https://www.youtube.com/c/HimgiriHealing2Feeling" target="_blank">
+
+                            <img class="contactIcons" src="images\youtube.webp" alt="youtube">
+                        </a>
+                    </span>
+
+                    <span>
+                        <a href="https://www.facebook.com/himgirihealing2feeling" target="_blank">
+                            <img class="contactIcons" src="images\facebook.webp" alt="facebook">
+                        </a>
+                    </span>
+
+                    <span>
+                        <a href="https://www.instagram.com/himgirihealing2feeling/" target="_blank">
+                            <img class="contactIcons" src="images\instagram.webp" alt="instagram">
+                        </a>
+                    </span>
+
+                    <span>
+                        <a href="https://api.whatsapp.com/send?phone=+919371083380" target="_blank">
+                            <img class="contactIcons" src="images\whatsapp.webp" alt="whatsapp">
+                        </a>
+                    </span>
+
+                    <span>
+                        <a href="https://twitter.com/Himgiri_Global" target="_blank">
+                            <img class="contactIcons" src="images\twitter.webp" alt="twitter">
+                        </a>
+                    </span>
+
+                </div>
+            </div>
+        </div>
+        <!--/div address/email-->
+        </div>
+        <div style="min-height: 30px;">
+        </div>
+    </section>  
+
+
+    <footer class="footer">
+        <div class="bottom-bar">
+            <div class="container-fluid">
+                <div class="row">
+                    <small class="copyright col-md-6 col-sm-6 col-xs-12">
+                        Copyright @
+
+                        <script type="text/javascript">
+                            var d = new Date()
+                            document.write(d.getFullYear())
+                        </script>
+                        Himgiri Global Meditation Center
+                    </small>
+
+                    <ul class="social col-md-6 col-sm-6 col-xs-12 list-inline">
+                        <li><a href="https://twitter.com/Himgiri_Global" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/HimgiriHealing2Feeling" target="_blank"><i
+                                    class="fa fa-instagram"></i></a></li>
+
+                        <li><a href="https://www.facebook.com/himgirihealing2feeling" target="_blank"><i
+                                    class="fa fa-facebook"></i></a></li>
+
+                        <li><a href="https://api.whatsapp.com/send?phone=+919371083380" target="_blank"><i
+                                    class="fa fa-whatsapp"></i></a></li>
+
+                        <li class="last"><a href="https://www.youtube.com/c/HimgiriHealing2Feeling" target="_blank"><i
+                                    class="fa fa-youtube-play"></i></a></li>
+
+
+
+                    </ul>
+                    <!--//social-->
+
+                </div>
+
+            </div>
+            <!--//container-->
+
+        </div>
+        <!--//bottom-bar-->
+
+    </footer>
+
+    <!-- jQuery -->
+
+    <script src="js/jquery.js"></script>
+
+
+
+    <!-- Bootstrap Core JavaScript -->
+
+    <script src="js/bootstrap.min.js"></script>
+
+
+
+    <!-- Plugin JavaScript -->
+
+    <script src="js/jquery.flexslider-min.js"></script>
+
+    <script src="js/jquery.easing.min.js"></script>
+
+    <script src="js/jquery.fittext.js"></script>
+
+    <script src="js/wow.min.js"></script>
+
+    <script src="js/back-to-top.js"></script>
+
+    
+
+    <!-- Join Us JavaScript -->
+    <script src="js/joinus.js"></script>
+
+    <!--[if !IE]>-->
+
+    <script src="js/animations.js"></script>
+
+    <!--<![endif]-->
+
+    <script src="js/loadData.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/custom.js"></script>
+   
+</body>
+
+
+
+</html>
